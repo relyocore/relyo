@@ -47,3 +47,6 @@ relyo.toml
 gen_id*
 start-all-nodes.sh
 append*.md
+genesis.toml
+genesis-data/
+my_genesis_wallet.txt
