@@ -1,0 +1,49 @@
+# Rust and Build Directories
+target/
+build/
+**/*.exe
+**/*.d
+**/*.rlib
+
+# Private node configurations, state data, and secret keys
+production-nodes/
+data/
+*.key
+*.pem
+*.secret
+wallet.key
+node_identity.key
+test-wallet.key
+receiver-wallet.key
+
+# Logs and outputs
+*.log
+*.txt
+build.log
+node_log.txt
+append.txt
+build_err.txt
+build_release_err.txt
+
+# Environment variables
+.env
+.env.local
+
+# Node modules for JS SDK
+node_modules/
+ecosystem/relyo-js-sdk/node_modules/
+ecosystem/relyo-js-sdk/dist/
+
+# Auto-created test scripts
+*.cjs
+test_sdk.js
+stress_test.js
+
+# OS specific files
+.DS_Store
+Thumbs.dbrules.md
+relyo.toml
+*.bat
+gen_id*
+start-all-nodes.sh
+append*.md

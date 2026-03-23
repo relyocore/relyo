@@ -1,0 +1,27 @@
+[package]
+name = "relyo-consensus"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Snowball/Avalanche-style probabilistic consensus for the Relyo payment network"
+
+[dependencies]
+relyo-core = { workspace = true }
+relyo-dag = { path = "../relyo-dag" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+bincode = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tokio = { workspace = true }
+dashmap = { workspace = true }
+parking_lot = { workspace = true }
+rand = { workspace = true }
+chrono = { workspace = true }
+crossbeam-channel = { workspace = true }
+bytes = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3.14"
+tokio = { workspace = true, features = ["full", "test-util"] }

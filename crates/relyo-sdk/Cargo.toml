@@ -1,0 +1,18 @@
+[package]
+name = "relyo-sdk"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Developer SDK for building applications on the Relyo payment network"
+
+[dependencies]
+relyo-core = { workspace = true }
+relyo-dag = { path = "../relyo-dag" }
+relyo-consensus = { path = "../relyo-consensus" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tokio = { workspace = true }
+hex = { workspace = true }

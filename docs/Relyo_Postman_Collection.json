@@ -1,0 +1,96 @@
+{
+  "info": {
+    "name": "Relyo Protocol JSON-RPC API",
+    "description": "Comprehensive Postman Collection for Relyo Core Nodes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "RPC_URL",
+      "value": "http://127.0.0.1:9742",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "rly_getBalance",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"1\",\n  \"method\": \"rly_getBalance\",\n  \"params\": {\n    \"address\": \"R1DummyAddressXYZ\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{RPC_URL}}/",
+          "host": ["{{RPC_URL}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "rly_getNonce",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"2\",\n  \"method\": \"rly_getNonce\",\n  \"params\": {\n    \"address\": \"R1DummyAddressXYZ\"\n  }\n}"
+        },
+        "url": {
+          "raw": "{{RPC_URL}}/",
+          "host": ["{{RPC_URL}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "rly_getTips",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"3\",\n  \"method\": \"rly_getTips\",\n  \"params\": {}\n}"
+        },
+        "url": {
+          "raw": "{{RPC_URL}}/",
+          "host": ["{{RPC_URL}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "rly_getStats",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"4\",\n  \"method\": \"rly_getStats\",\n  \"params\": {}\n}"
+        },
+        "url": {
+          "raw": "{{RPC_URL}}/",
+          "host": ["{{RPC_URL}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "rly_getEmission",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jsonrpc\": \"2.0\",\n  \"id\": \"5\",\n  \"method\": \"rly_getEmission\",\n  \"params\": {}\n}"
+        },
+        "url": {
+          "raw": "{{RPC_URL}}/",
+          "host": ["{{RPC_URL}}"],
+          "path": [""]
+        }
+      }
+    }
+  ]
+}
