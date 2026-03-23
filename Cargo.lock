@@ -1034,28 +1034,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gen_id"
-version = "0.1.0"
-dependencies = [
- "bincode",
- "bytes",
- "chrono",
- "crossbeam-channel",
- "dashmap",
- "futures",
- "libp2p",
- "parking_lot",
- "rand 0.8.5",
- "relyo-core",
- "serde",
- "serde_json",
- "tempfile",
- "thiserror 2.0.18",
- "tokio",
- "tracing",
-]
-
-[[package]]
 name = "generic-array"
 version = "0.14.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
