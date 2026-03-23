@@ -1,49 +1,79 @@
-# Relyo Network
+# Relyo Core
 
-A peer-to-peer digital ledger based on a Proof-of-Stake Directed Acyclic Graph (DAG) architecture.
+Relyo is a decentralized, peer-to-peer electronic cash system. 
 
-Relyo is built on absolute mathematical constraints. It is designed to be highly scalable, explicitly fair, and completely resistant to central control.
+It is built to be fast, highly secure, and extremely simple. Relyo does not use a traditional blockchain. Instead, it uses a Blockless DAG (Directed Acyclic Graph) combined with Proof-of-Stake. This means there are no miners, no expensive energy costs, and transactions are processed directly by the network.
 
-## Principles
+## Legal Disclaimer & Notice
 
-1. **Hard Cap:** The maximum supply is mathematically locked at exactly 25,000,000,000 RLY. Not a fraction more can ever exist.
-2. **Zero Pre-mine:** The genesis block contains zero balances. No tokens were created out of thin air to enrich founders or early investors.
-3. **100% Validator Yield:** Every transaction fee and newly minted token goes exclusively to the validating nodes. There is no "treasury tax" or "developer fund" skimming off network activity.
-4. **No Admins:** There are no master keys, no admin overrides, and no backdoor pauses. The code is the final authority.
+**Please read this carefully before doing anything.**
 
-## Architecture
+Relyo is purely a piece of open-source software. AYE Technology (the creators of this code) is **not** selling anything. We are not a company raising funds, there was no ICO, and we are not asking for money. 
 
-Relyo operates as a Layer-1 PoS DAG. Unlike traditional blockchains that batch transactions into singular blocks every few minutes, Relyo allows every transaction to validate two previous transactions (`parent_1` and `parent_2`). This dual-parent structure creates a self-weaving ledger, drastically reducing latency and removing block-wait times entirely.
+Relyo is meant to function exactly like Bitcoin—as a free, open, and permissionless digital currency. We do not control the network, we do not control the price, and we do not guarantee any financial return. You use this software entirely at your own risk.
 
-Consensus is achieved strictly via Proof of Stake (PoS). Nodes require a minimum of 10,000 RLY locked in the state vault to participate in validation and earn network rewards.
+---
 
-## Compiling from Source
+## Tokenomics (The Hard Rules)
 
-The entire protocol is written in Rust for memory safety, concurrency, and zero-cost abstractions.
+We believe in absolute mathematical scarcity. We have written strict rules into the core code that can never be changed:
 
-```bash
-# Clone the repository
-git clone https://github.com/AYE-Technology/relyo
-cd relyo
+- **Maximum Supply**: Exactly 25,000,000,000 RLY (25 Billion). Not a single coin more can ever exist.
+- **Pre-mine**: 0%. The code starts completely fair.
+- **Validator Yield**: 100%. Validators get all the transaction fees. There is no "admin" tax or "dev fund" fee.
+- **Admin Keys**: None. There are no backdoor access keys. The community owns the network.
 
-# Build the release binary
-cargo build --release
+---
 
-# The compiled core node will be available at:
-# ./target/release/relyo-node.exe
-```
+## How to Create a Wallet
 
-## Running a Node
+You need a wallet to hold your RLY coins or to stake them.
 
-Running a node is how you secure the network and earn RLY. The minimum hardware requirements are deliberately kept low: 1GB RAM, 2 vCPU, and a light SSD.
+1. Make sure you have Rust installed on your computer.
+2. Clone this repository to your local machine.
+3. Open your terminal or command prompt inside the folder.
+4. Run the following command to generate a new keypair:
 
 ```bash
-# Start the node and connect to the decentralized network
-./target/release/relyo-node --config relyo.toml run
+cargo run --bin relyo-wallet -- create
 ```
+
+This will output your public address (starting with `RLY...`) and your private key. 
+**Save your private key somewhere extremely safe.** If you lose it, you lose your coins. Nobody can recover it for you.
+
+---
+
+## How to Run a Node & Become a Validator
+
+If you want to secure the network and earn transaction fees, you can run a validator node.
+
+### Server Requirements
+- **RAM**: 1GB minimum (+2GB swap file recommended)
+- **CPU**: 2 Cores
+- **Storage**: 40GB SSD
+- **Network**: IPv6 enabled, ports 9740 and 9741 must be open
+
+### Installation Steps
+
+1. Install Rust (`curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh`)
+2. Clone this source code to your server.
+3. Build the node software:
+
+```bash
+cargo build --release --bin relyo-node
+```
+
+4. Create your node configuration file (`relyo.toml`). You will need to put your validator private key inside this file.
+5. Start the node:
+
+```bash
+./target/release/relyo-node --config relyo.toml
+```
+
+To become an active validator, you must stake a minimum of `10,000 RLY`. Note that if you decide to unstake, there is a strict 30-day lock period before your coins are free to move again. This keeps the network stable.
+
+---
 
 ## License
 
-This software is released under the MIT License. It belongs to no single entity. You are free to read it, build upon it, and run it.
-
-The math runs the network. The nodes secure it. Nothing else.
+This project is released under the **MIT License**. It is free for anyone to use, modify, and distribute.
