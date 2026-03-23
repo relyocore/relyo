@@ -8,7 +8,7 @@ members = [
     "crates/relyo-node",
     "crates/relyo-wallet",
     "crates/relyo-explorer",
-    "crates/relyo-sdk", "gen_id",
+    "crates/relyo-sdk",
 ]
 
 [workspace.package]
